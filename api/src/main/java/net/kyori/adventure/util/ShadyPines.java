@@ -23,8 +23,10 @@
  */
 package net.kyori.adventure.util;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
@@ -52,6 +54,25 @@ public final class ShadyPines {
     final Set<E> set = EnumSet.noneOf(type);
     Collections.addAll(set, constants);
     return Collections.unmodifiableSet(set);
+  }
+
+  /**
+   * Adds an element to the end of the list, or returns a new list.
+   *
+   * <p>The returned list is unmodifiable.</p>
+   *
+   * @param oldList the old list
+   * @param newElement the element to add
+   * @param <T> the element type
+   * @return a list
+   * @since 4.8.0
+   */
+  public static <T> @NonNull List<T> addOne(final @NonNull List<T> oldList, final T newElement) {
+    if(oldList.isEmpty()) return Collections.singletonList(newElement);
+    final List<T> newList = new ArrayList<>(oldList.size() + 1);
+    newList.addAll(oldList);
+    newList.add(newElement);
+    return Collections.unmodifiableList(newList);
   }
 
   /**
