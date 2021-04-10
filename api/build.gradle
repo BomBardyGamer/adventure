@@ -11,4 +11,12 @@ dependencies {
   testImplementation(libs.google.guava)
 }
 
+sourceSets {
+  main {
+    multirelease {
+      alternateVersions(10) // 9 added in root project
+    }
+  }
+}
+
 applyJarMetadata(this, "net.kyori.adventure")

@@ -23,12 +23,9 @@
  */
 package net.kyori.adventure.util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.EnumSet;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -96,7 +93,7 @@ public final class ShadyPines {
    */
   public static <E> @NonNull List<E> immutableList(final @NonNull Collection<E> original) {
     requireNonNull(original, "original");
-    return Collections.unmodifiableList(new ArrayList<>(original));
+    return List.copyOf(original);
   }
 
   /**
@@ -110,7 +107,7 @@ public final class ShadyPines {
   @SafeVarargs
   public static <E> @NonNull List<E> immutableList(final @NonNull E@NonNull... original) {
     requireNonNull(original, "original");
-    return Collections.unmodifiableList(Arrays.asList(original));
+    return List.of(original);
   }
 
   /**
@@ -123,6 +120,6 @@ public final class ShadyPines {
    * @since 4.8.0
    */
   public static <K, V> @NonNull Map<K, V> immutableMap(final @NonNull Map<K, V> original) {
-    return Collections.unmodifiableMap(new HashMap<>(original));
+    return Map.copyOf(original);
   }
 }
