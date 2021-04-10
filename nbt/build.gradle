@@ -1,8 +1,8 @@
 dependencies {
-  api("net.kyori:examination-api:1.1.0")
-  api("net.kyori:examination-string:1.1.0")
-  compileOnlyApi("org.checkerframework:checker-qual:3.11.0")
-  compileOnlyApi("org.jetbrains:annotations:20.1.0")
+  api(libs.examination.api)
+  api(libs.examination.string)
+  compileOnlyApi(libs.checker)
+  compileOnlyApi(libs.jetbrainsAnnotations)
 }
 
 applyJarMetadata(this, "net.kyori.adventure.nbt")
