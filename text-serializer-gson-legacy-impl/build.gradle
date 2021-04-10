@@ -1,4 +1,5 @@
 dependencies {
+  compileOnly(libs.google.gsonNew) // needed for module definition
   api(projects.adventureApi)
   api(projects.adventureTextSerializerGson)
   api(projects.adventureNbt)

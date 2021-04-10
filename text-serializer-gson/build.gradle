@@ -1,5 +1,6 @@
 dependencies {
   api(projects.adventureApi)
+  compileOnly(libs.google.gsonNew)
   api(libs.google.gson)
   testImplementation(projects.adventureNbt)
 }

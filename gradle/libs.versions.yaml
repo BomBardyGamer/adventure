@@ -8,7 +8,8 @@ dependencies:
   configurate4: "org.spongepowered:configurate-core:4.0.0"
   examination-api: {group: net.kyori, name: examination-api, version: &examination 1.1.0}
   examination-string: {group: net.kyori, name: examination-string, version: *examination}
-  google-gson: "com.google.code.gson:gson:2.8.0"
+  google-gson: "com.google.code.gson:gson:2.8.0" # the version used in minecraft
+  google-gsonNew: "com.google.code.gson:gson:2.8.6" # the version used to compile, so we get a module descriptor
   jetbrainsAnnotations: "org.jetbrains:annotations:20.1.0"
   kotlin-stdlib8: {group: "org.jetbrains.kotlin", name: "kotlin-stdlib-jdk8"}
 
